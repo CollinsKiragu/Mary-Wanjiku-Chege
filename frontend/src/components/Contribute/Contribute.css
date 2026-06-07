@@ -1,0 +1,270 @@
+/* .contribute-section {
+  padding: 5rem 2rem;
+  background: white;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  text-align: center;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+  font-size: 1.25rem;
+  text-align: center;
+  color: #666;
+  font-style: italic;
+  margin-bottom: 2rem;
+}
+
+.contribute-intro {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 3rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contribution-card {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 3rem;
+  border-radius: 15px;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  border-left: 5px solid #667eea;
+}
+
+.contribution-card h4 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.contribution-detail {
+  background: white;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.contribution-detail strong {
+  color: #667eea;
+  display: inline-block;
+  min-width: 150px;
+}
+
+.contribution-note {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+  font-style: italic;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .contribution-card {
+    padding: 2rem;
+  }
+  .contribution-detail {
+    font-size: 1rem;
+  }
+}
+
+.loading-state {
+  text-align: center;
+  padding: 3rem;
+  color: #666;
+  font-size: 1.1rem;
+  font-style: italic;
+}
+
+.error-state {
+  background: #fff3cd;
+  border-left: 4px solid #ffc107;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.error-state p {
+  color: #856404;
+  margin-bottom: 0.5rem;
+}
+
+.error-state p:last-child {
+  margin-bottom: 0;
+  font-size: 0.95rem;
+} */
+
+
+.contribute-section {
+  padding: 5rem 2rem;
+  background: linear-gradient(to bottom, #f9f9f9, white);
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  text-align: center;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.contribute-intro {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+}
+
+.contribute-intro p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+}
+
+.contribute-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.contribute-card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.contribute-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.contribute-icon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.contribute-card h3 {
+  font-size: 1.5rem;
+  color: #667eea;
+  margin-bottom: 1rem;
+}
+
+.contribute-card p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #666;
+}
+
+.contact-section {
+  background: white;
+  padding: 3rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  margin-bottom: 2rem;
+}
+
+.contact-section h3 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.contact-intro {
+  text-align: center;
+  color: #666;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.contact-card {
+  background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  margin-bottom: 2rem;
+  border-left: 4px solid #667eea;
+}
+
+.contact-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.contact-phone {
+  font-size: 1.3rem;
+}
+
+.contact-phone a {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.contact-phone a:hover {
+  color: #764ba2;
+}
+
+.contact-note {
+  text-align: center;
+  color: #666;
+  font-size: 1rem;
+  line-height: 1.7;
+  font-style: italic;
+}
+
+.moderation-notice {
+  background: #fff3cd;
+  border-left: 4px solid #ffc107;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.moderation-notice p {
+  color: #856404;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .contribute-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .contact-section {
+    padding: 2rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+}

@@ -1,0 +1,234 @@
+.about-section {
+  padding: 6rem 2rem;
+  background: linear-gradient(to bottom, #ffffff 0%, #f8f9fa 100%);
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  text-align: center;
+  color: #333;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.section-subtitle {
+  font-size: 1.25rem;
+  text-align: center;
+  color: #667eea;
+  font-style: italic;
+  margin-bottom: 4rem;
+}
+
+/* =========================================
+   TWO-COLUMN GRID (Image Left, Text Right)
+   ========================================= */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 4rem;
+  align-items: start; /* Aligns to top so image doesn't stretch vertically */
+}
+
+.about-image-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+/* ✅ UPDATED: No cropping, respects natural aspect ratio */
+.about-image {
+  width: 100%;
+  max-width: 450px; /* Matches Cloudinary w_450 */
+  height: auto; /* Allows natural height based on aspect ratio */
+  object-fit: contain; /* Ensures no browser-level cropping or distortion */
+  border-radius: 15px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  position: relative;
+  z-index: 2;
+  transition: transform 0.4s ease;
+  background-color: #f8f9fa; /* Subtle background in case of transparent edges */
+}
+
+.about-image:hover {
+  transform: translateY(-5px);
+}
+
+/* ✅ UPDATED: Frame now scales perfectly with the image's natural height */
+.image-frame {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 100%;
+  max-width: 450px;
+  height: 100%; 
+  border: 3px solid #667eea;
+  border-radius: 15px;
+  z-index: 1;
+  opacity: 0.3;
+}
+
+.about-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding-top: 1rem;
+}
+
+.about-lead {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #444;
+  font-weight: 500;
+}
+
+.about-text p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #555;
+  text-align: justify;
+}
+
+.about-blessing {
+  background: linear-gradient(135deg, #f0f4ff 0%, #fdfbff 100%);
+  padding: 1.5rem;
+  border-left: 4px solid #667eea;
+  border-radius: 0 10px 10px 0;
+  font-style: italic;
+  color: #444;
+}
+
+.about-signoff {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #667eea;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* =========================================
+   FULL-WIDTH CENTERED BIBLE VERSE
+   ========================================= */
+.full-width-verse {
+  width: 100%;
+  margin-top: 4rem;
+  padding: 3.5rem 2rem;
+  background: linear-gradient(135deg, #fdfbff 0%, #f0f4ff 100%);
+  border-radius: 15px;
+  border: 1px solid rgba(102, 126, 234, 0.15);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.05);
+}
+
+.full-width-verse::before {
+  content: '✝';
+  font-size: 10rem;
+  color: #667eea;
+  opacity: 0.04;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.verse-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.verse-quote-icon {
+  font-size: 3.5rem;
+  color: #667eea;
+  opacity: 0.4;
+  line-height: 1;
+  margin-bottom: 1rem;
+  display: block;
+  font-family: 'Georgia', serif;
+}
+
+.verse-text {
+  font-size: 1.4rem;
+  font-style: italic;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-family: 'Georgia', 'Times New Roman', serif;
+}
+
+.verse-reference {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #667eea;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+   ========================================= */
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .about-image-wrapper {
+    order: -1;
+  }
+
+  .about-image {
+    max-width: 350px;
+  }
+
+  .image-frame {
+    max-width: 350px;
+    top: 15px;
+    left: 15px;
+  }
+
+  .about-text p {
+    text-align: left;
+  }
+
+  .full-width-verse {
+    margin-top: 3rem;
+    padding: 2.5rem 1.5rem;
+  }
+
+  .verse-text {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-section {
+    padding: 4rem 1.5rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .about-image {
+    max-width: 280px;
+  }
+
+  .image-frame {
+    max-width: 280px;
+  }
+  
+  .verse-text {
+    font-size: 1.1rem;
+  }
+}
