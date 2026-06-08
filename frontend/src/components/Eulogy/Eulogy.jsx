@@ -91,6 +91,7 @@
 import { useEffect, useState } from 'react'
 import { contentService } from '../../services/contentService'
 import eulogyPDF from '../../assets/eulogy.pdf'
+import eulogyPDF2 from '../../assets/MaryEulogy.pdf'
 import './Eulogy.css'
 
 const Eulogy = () => {
@@ -127,7 +128,7 @@ const Eulogy = () => {
               📄 Download PDF
             </a> */}
             <iframe
-              src={eulogyPDF}
+              src={eulogyPDF2}
               title="Eulogy PDF"
               className="pdf-viewer"
             />
