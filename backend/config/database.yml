@@ -38,7 +38,7 @@
 #   password: <%= ENV["MARY_WANJIKU_DATABASE_PASSWORD"] %>
 
 # DEBUG: This will show in Render logs
-<% puts "DATABASE_URL is: #{ENV['DATABASE_URL'].inspect}" %>
+# <% puts "DATABASE_URL is: #{ENV['DATABASE_URL'].inspect}" %>
 
 default: &default
   adapter: postgresql
@@ -46,29 +46,57 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 development:
-  <<: *default
-  database: mary_wanjiku_development
-  username: postgres
-  password: postgres
-  host: localhost
+  primary:
+    <<: *default
+    database: mary_wanjiku_development
+    username: postgres
+    password: postgres
+    host: localhost
+  cable:
+    <<: *default
+    database: mary_wanjiku_development
+    username: postgres
+    password: postgres
+    host: localhost
+    migrations_paths: db/cable_migrate
 
 test:
-  <<: *default
-  database: mary_wanjiku_test
-  username: postgres
-  password: postgres
-  host: localhost
+  primary:
+    <<: *default
+    database: mary_wanjiku_test
+    username: postgres
+    password: postgres
+    host: localhost
+  cable:
+    <<: *default
+    database: mary_wanjiku_test
+    username: postgres
+    password: postgres
+    host: localhost
+    migrations_paths: db/cable_migrate
 
 production:
-  adapter: postgresql
-  encoding: unicode
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  url: <%= ENV['DATABASE_URL'] %>
-  host: <%= URI.parse(ENV['DATABASE_URL']).host %>
-  port: <%= URI.parse(ENV['DATABASE_URL']).port %>
-  database: <%= URI.parse(ENV['DATABASE_URL']).path.sub('/', '') %>
-  username: <%= URI.parse(ENV['DATABASE_URL']).userinfo.split(':')[0] %>
-  password: <%= URI.parse(ENV['DATABASE_URL']).userinfo.split(':')[1] %>
+  primary:
+    adapter: postgresql
+    encoding: unicode
+    pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+    url: <%= ENV['DATABASE_URL'] %>
+    host: <%= URI.parse(ENV['DATABASE_URL']).host %>
+    port: <%= URI.parse(ENV['DATABASE_URL']).port %>
+    database: <%= URI.parse(ENV['DATABASE_URL']).path.sub('/', '') %>
+    username: <%= URI.parse(ENV['DATABASE_URL']).userinfo.split(':')[0] %>
+    password: <%= URI.parse(ENV['DATABASE_URL']).userinfo.split(':')[1] %>
+  cable:
+    adapter: postgresql
+    encoding: unicode
+    pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+    url: <%= ENV['DATABASE_URL'] %>
+    host: <%= URI.parse(ENV['DATABASE_URL']).host %>
+    port: <%= URI.parse(ENV['DATABASE_URL']).port %>
+    database: <%= URI.parse(ENV['DATABASE_URL']).path.sub('/', '') %>
+    username: <%= URI.parse(ENV['DATABASE_URL']).userinfo.split(':')[0] %>
+    password: <%= URI.parse(ENV['DATABASE_URL']).userinfo.split(':')[1] %>
+    migrations_paths: db/cable_migrate
 
   # The specified database role being used to connect to PostgreSQL.
   # To create additional roles in PostgreSQL see `$ createuser --help`.
