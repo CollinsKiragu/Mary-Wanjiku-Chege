@@ -37,6 +37,8 @@
 #   username: mary_wanjiku
 #   password: <%= ENV["MARY_WANJIKU_DATABASE_PASSWORD"] %>
 
+# DEBUG: This will show in Render logs
+<% puts "DATABASE_URL is: #{ENV['DATABASE_URL'].inspect}" %>
 
 default: &default
   adapter: postgresql
