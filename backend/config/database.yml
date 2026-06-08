@@ -74,31 +74,14 @@ test:
     migrations_paths: db/cable_migrate
 
 production:
-  primary:
+  primary: &production_primary
     adapter: postgresql
     encoding: unicode
     pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-    <% if ENV['DATABASE_URL'] %>
     url: <%= ENV['DATABASE_URL'] %>
-    host: <%= URI.parse(ENV['DATABASE_URL']).host %>
-    port: <%= URI.parse(ENV['DATABASE_URL']).port %>
-    database: <%= URI.parse(ENV['DATABASE_URL']).path.sub('/', '') %>
-    username: <%= URI.parse(ENV['DATABASE_URL']).userinfo.split(':')[0] %>
-    password: <%= URI.parse(ENV['DATABASE_URL']).userinfo.split(':')[1] %>
-    <% end %>
   cable:
-    adapter: postgresql
-    encoding: unicode
-    pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-    <% if ENV['DATABASE_URL'] %>
-    url: <%= ENV['DATABASE_URL'] %>
-    host: <%= URI.parse(ENV['DATABASE_URL']).host %>
-    port: <%= URI.parse(ENV['DATABASE_URL']).port %>
-    database: <%= URI.parse(ENV['DATABASE_URL']).path.sub('/', '') %>
-    username: <%= URI.parse(ENV['DATABASE_URL']).userinfo.split(':')[0] %>
-    password: <%= URI.parse(ENV['DATABASE_URL']).userinfo.split(':')[1] %>
+    <<: *production_primary
     migrations_paths: db/cable_migrate
-    <% end %>
 
   # The specified database role being used to connect to PostgreSQL.
   # To create additional roles in PostgreSQL see `$ createuser --help`.
